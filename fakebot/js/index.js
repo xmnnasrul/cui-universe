@@ -40,7 +40,7 @@ function botDelay(jawabanUser) {
     pertanyaan.innerHTML = botSay(jawabanUser)[init];
   }, [1000]);
   usersData.push(jawaban.value);
-  jawaban.value = "";
+  jawaban.value = ``;
 }
 function finishing() {
   pertanyaan.innerHTML = `Thank u ya ${usersData[0]} udah main ke XBot😁, kali-kali kita main ${usersData[2]} bareng ya!`;
