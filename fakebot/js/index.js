@@ -2,7 +2,6 @@ const pertanyaan = document.getElementById("pertanyaan");
 const jawaban = document.getElementById("jawaban");
 
 let init = 0;
-
 const botSay = (data) => {
   return [
     `Perkenalkan nama saya XBot, siapa mana kamu?`,
