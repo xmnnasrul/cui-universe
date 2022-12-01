@@ -1,5 +1,7 @@
 const pertanyaan = document.getElementById("pertanyaan");
 const jawaban = document.getElementById("jawaban");
+const loaders = document.getElementById("loaders")
+const container = document.getElementById("container")
 
 let init = 0;
 const botSay = (data) => {
@@ -17,6 +19,7 @@ pertanyaan.innerHTML = botSay()[0];
 let usersData = [];
 
 function botStart() {
+  if (jawaban.value.length < 1) return alert ("silahkan diisi dulu")
   init++;
   if (init === 1) {
     botDelay({ nama: jawaban.value });
@@ -33,18 +36,25 @@ function botStart() {
   }
 }
 
-function botDelay(jawabanUser) {
-  console.log({ usersData: usersData });
+function botDelay(jawabanUser) { 
+ loaders.style.display = "block"
+ container.style.filter = "blur(8px)"
+
   setTimeout(() => {
     pertanyaan.innerHTML = botSay(jawabanUser)[init];
+    loaders.style.display = "none"
+    container.style.filter = "none"
   }, [1000]);
   usersData.push(jawaban.value);
   jawaban.value = ``;
 }
+
 function finishing() {
   pertanyaan.innerHTML = `Thank u ya ${usersData[0]} udah main ke XBot😁, kali-kali kita main ${usersData[2]} bareng ya!`;
   jawaban.value = `siap Thanks juga`;
 }
+
 function botEnd() {
+  alert(`terimakasih ${usersData[0]} sudah berkujung😍`)
   window.location.reload();
 }

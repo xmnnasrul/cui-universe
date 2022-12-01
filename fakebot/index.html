@@ -8,15 +8,19 @@
     <title>fakebot</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <div class="wrapper">
-            <h2 id="pertanyaan"></h2>
-            <div class="row">
-                <input type="text" id="jawaban" placeholder="silahkan jawab">
-                <button onclick="botStart()">SEND</button>
+            <div class="content">
+                <h2 id="pertanyaan"></h2>
+                <div class="row">
+                    <input type="text" id="jawaban" placeholder="silahkan jawab">
+                    <button onclick="botStart()">SEND</button>
+                </div>
             </div>
         </div>
     </div>
+    <div id="loaders"></div>
+    
     <script src="js/index.js"></script>
 </body>
 </html>

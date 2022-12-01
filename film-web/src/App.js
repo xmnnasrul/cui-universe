@@ -38,7 +38,7 @@ const popularMovieList = () => {
         <h1>Movie</h1>
         <input className="Movie-search" placeholder="search" onChange={({ target }) => search(target.value)} />
         <div className="Movie-container">
-          <popularMovieList />
+          <popularMovieList></popularMovieList>
         </div>
       </header>
     </div>
